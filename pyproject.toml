@@ -1,0 +1,25 @@
+[project]
+name = "imagination_to_real"
+version = "0.1.0"
+description = "Train your robot to do whatever you want using Generative AI"
+authors = [
+    { name = "SmilingRobo", email = "support@smilingrobo.com" },
+]
+license = { file = "LICENSE" }
+readme = "README.md"
+dependencies = [
+    "numpy==1.26.3",
+    "params_proto"
+]
+
+[project.urls]
+"Homepage" = "https://www.smilingrobo.com/"
+"Source" = "https://github.com/SmilingRobo/imagination-to-real"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["imagination-to-real*"]
