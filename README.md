@@ -1,4 +1,4 @@
-# Imagination_to_Real
+# Imagination_to_Real BY SmilingRobo
 
 ### [🌐 Website](https://www.smilingrobo.com) | [📝 Paper](https://arxiv.org/abs/2411.00083)
 
