@@ -1,4 +1,6 @@
-# Imagination_to_Real BY SmilingRobo
+# Imagination_to_Real 
+### BY SmilingRobo
+<a href="https://www.buymeacoffee.com/SupportSmilingRobo" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
 ### [🌐 Website](https://www.smilingrobo.com) | [📝 Paper](https://arxiv.org/abs/2411.00083)
 
