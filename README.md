@@ -1,8 +1,10 @@
-# Imagination_to_Real 
-### BY SmilingRobo
+## imagination_to_real 
+# By SmilingRobo
 <a href="https://www.buymeacoffee.com/SupportSmilingRobo" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
-### [🌐 Website](https://www.smilingrobo.com) | [📝 Paper](https://arxiv.org/abs/2411.00083) [Refrence taken from](https://github.com/lucidsim)
+we are feeling Sleepy, Can you Buy us a Coffee 😴
+
+### [🌐 Website](https://www.smilingrobo.com) | [📝 Paper](https://arxiv.org/abs/2411.00083)| [Refrence taken from](https://github.com/lucidsim)
 
 **imagination-to-real** Train your robot to do whatever you want using Generative AI
 
