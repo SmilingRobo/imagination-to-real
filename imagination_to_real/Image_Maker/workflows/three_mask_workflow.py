@@ -6,7 +6,7 @@ import numpy as np
 import torch
 from params_proto import ParamsProto
 
-from .utils import (
+from ..utils import (
     get_value_at_index,
     import_custom_nodes,
     add_extra_model_paths,

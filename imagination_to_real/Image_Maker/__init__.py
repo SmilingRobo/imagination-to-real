@@ -1,4 +1,4 @@
-# Expose the image_maker functionality at the package level
-from .image_maker import marker  # Adjust to match the actual file/module structure
+from pathlib import Path
 
-__all__ = ["marker"]
+EXAMPLES_ROOT = Path(__file__).parent.parent / "examples"
+print(EXAMPLES_ROOT)

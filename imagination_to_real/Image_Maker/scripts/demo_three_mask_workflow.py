@@ -27,9 +27,9 @@ class DemoArgs(ParamsProto):
 
 
 def main(**deps):
-    from imagination_to_real.Image_Maker import EXAMPLES_ROOT
-    from imagination_to_real.Image_Maker.utils import pick
-    from imagination_to_real.Image_Maker.workflows.three_mask_workflow import ImagenCone
+    from imagination_to_real.image_maker import EXAMPLES_ROOT
+    from imagination_to_real.image_maker.utils import pick
+    from imagination_to_real.image_maker.workflows.three_mask_workflow import ImagenCone
     import random
 
     DemoArgs._update(deps)

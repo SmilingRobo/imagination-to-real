@@ -23,11 +23,15 @@ learn highly dynamic tasks like parkour without requiring depth.
     - [Running the Example Workflow](#running-the-example-workflow)
     - [Adding Your Own Workflows](#adding-your-own-workflows)
     - [Scaling Image Generation](#scaling-image-generation)
-- [Train the Robot]()
-
+- [Train the Robot](#training-the-robot)
+  -[Installing Dependencies](#1️-installing-gym_dmc)
+  - [Usage](#usage)
+    - [Basic LucidSim Pipeline](#rendering-conditioning-images)
+    - [Full Rendering Pipeline (requires weaver)](#full-lucidsim-rendering-pipeline)
 - [Citation](#citation)
 
-## Make Images using Image_Maker
+
+## Make Images using image_maker
 
 #### 1. Setup Conda Environment
 
@@ -91,7 +95,7 @@ We provide example conditioning images and prompts for `three_mask_workflow` und
 scene. To try it out, use:
 
 ```bash
-python Imagination-to-Real/Image_Maker/scripts/demo_three_mask_workflow.py [--example-name] [--seed] [--save]
+python imagination_to_real/image_maker/scripts/demo_three_mask_workflow.py [--example-name] [--seed] [--save]
 ```
 
 where `example-name` corresponds to one of the scenes in the `examples/three_mask_workflow` folder, and the `save` flag
@@ -113,6 +117,73 @@ conditioning images through a task queue (see [Zaku](https://zaku.readthedocs.io
 instructions for this in the future, but we have included `Image_Maker/render_node.py` for your reference.
 
 
+## Training the Robot
+
+<table style="border-collapse: collapse; border: none; width: 100%;">
+  <tr>
+    <td style="text-align: center; border: none;">
+      <img src="assets/images/example_conditioning.png" style="width: 500px; max-width: 100%;" /><br>
+    </td>
+    <td style="text-align: center; border: none;">
+      <img src="assets/images/example_imagen.png" style="width: 500px; max-width: 100%;" /><br>
+    </td>
+  </tr>
+</table>
+
+## 1.️ Installing gym_dmc
+
+The last few dependencies require a downgraded `setuptools` and `wheel` to install. To install, please downgrade and
+revert after.
+
+```bash
+pip install setuptools==65.5.0 wheel==0.38.4 pip==23
+pip install gym==0.21.0
+pip install gym-dmc==0.2.9
+pip install -U setuptools wheel pip
+```
+
+## Usage
+
+**Note:** On Linux, make sure to set the environment variable ` MUJOCO_GL=egl`.
+
+LucidSim generates photorealistic images by using a generative model to augment the simulator's rendering, using
+conditioning images to maintain control over the scene geometry.
+
+#### Rendering Conditioning Images
+
+We have provided an expert policy checkpoint under `checkpoints/expert.pt`. This policy was derived from that
+of [Extreme Parkour](https://github.com/chengxuxin/extreme-parkour). You can use this policy to sample an environment
+and visualize the conditioning images with:
+
+```bash
+# env-name: one of ['parkour', 'hurdle', 'gaps', 'stairs_v1', 'stairs_v2']
+python play.py --save-path [--env-name] [--num-steps] [--seed]
+````
+
+where `save_path` is where to save the resulting video.
+
+#### Full LucidSim Rendering Pipeline
+
+To run the full generative augmentation pipeline, you will need to install the `weaver` package
+from [here](https://github.com/lucidsim/weaver). When done, please also make sure the environment variables are still
+set correctly:
+
+```bash
+COMFYUI_CONFIG_PATH=/path/to/extra_model_paths.yaml
+PYTHONPATH=/path/to/ComfyUI:$PYTHONPATH
+```
+
+You can then run the full pipeline with:
+
+```bash
+python play_three_mask_workflow.py --save-path --prompt-collection [--env-name] [--num-steps] [--seed]
+```
+
+where `save_path` and `env_name` are the same as before. `prompt_collection` should be a path to a `.jsonl` file with
+correctly formatted prompts, as in the `weaver/examples` folder.
+
+We thank the authors of [Extreme Parkour](https://github.com/chengxuxin/extreme-parkour) for their open-source codebase,
+which we used as a starting point for our expert policy (`lucidsim.model`).
 
 
 
