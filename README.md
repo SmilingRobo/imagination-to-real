@@ -2,7 +2,7 @@
 ### BY SmilingRobo
 <a href="https://www.buymeacoffee.com/SupportSmilingRobo" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
-### [🌐 Website](https://www.smilingrobo.com) | [📝 Paper](https://arxiv.org/abs/2411.00083)
+### [🌐 Website](https://www.smilingrobo.com) | [📝 Paper](https://arxiv.org/abs/2411.00083) [Refrence taken from](https://github.com/lucidsim)
 
 **imagination-to-real** Train your robot to do whatever you want using Generative AI
 
@@ -117,6 +117,7 @@ conditioning images through a task queue (see [Zaku](https://zaku.readthedocs.io
 instructions for this in the future, but we have included `Image_Maker/render_node.py` for your reference.
 
 
+
 ## Training the Robot
 
 <table style="border-collapse: collapse; border: none; width: 100%;">
@@ -157,15 +158,14 @@ and visualize the conditioning images with:
 
 ```bash
 # env-name: one of ['parkour', 'hurdle', 'gaps', 'stairs_v1', 'stairs_v2']
-python play.py --save-path [--env-name] [--num-steps] [--seed]
+!python imagination_to_real/lucidsim/scripts/play.py --save-path [--env-name] [--num-steps] [--seed]
 ````
 
 where `save_path` is where to save the resulting video.
 
 #### Full LucidSim Rendering Pipeline
 
-To run the full generative augmentation pipeline, you will need to install the `weaver` package
-from [here](https://github.com/lucidsim/weaver). When done, please also make sure the environment variables are still
+To run the full generative augmentation pipeline, please also make sure the environment variables are still
 set correctly:
 
 ```bash
@@ -176,7 +176,7 @@ PYTHONPATH=/path/to/ComfyUI:$PYTHONPATH
 You can then run the full pipeline with:
 
 ```bash
-python play_three_mask_workflow.py --save-path --prompt-collection [--env-name] [--num-steps] [--seed]
+python imagination_to_real/lucidsim/scripts/play_three_mask_workflow.py --save-path --prompt-collection [--env-name] [--num-steps] [--seed]
 ```
 
 where `save_path` and `env_name` are the same as before. `prompt_collection` should be a path to a `.jsonl` file with
@@ -186,6 +186,7 @@ We thank the authors of [Extreme Parkour](https://github.com/chengxuxin/extreme-
 which we used as a starting point for our expert policy (`lucidsim.model`).
 
 
+<a href="https://www.buymeacoffee.com/SupportSmilingRobo" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
 
 ## Citation
