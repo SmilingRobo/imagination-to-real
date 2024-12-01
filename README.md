@@ -1,48 +1,68 @@
 #### imagination_to_real 
-# By SmilingRobo
+## By SmilingRobo
+
 <a href="https://www.buymeacoffee.com/SupportSmilingRobo" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
-we are feeling Sleepy, Can you Buy us a Coffee 😴
+*We are feeling sleepy... Can you buy us a coffee?* 😴  
 
-### [🌐 Website](https://www.smilingrobo.com) | [📝 Paper](https://arxiv.org/abs/2411.00083)| [Refrence taken from](https://github.com/lucidsim)
+---
+
+### [🌐 SmilingRobo](https://www.smilingrobo.com) | [📝 Paper](https://arxiv.org/abs/2411.00083) | [Refrence](https://github.com/lucidsim)
 
 **imagination-to-real** Train your robot to do whatever you want using Generative AI
 
-We bring realistic and diverse visual data from generative models to classical physics simulators, enabling robots to
-learn highly dynamic tasks like parkour without requiring depth.
+Description
+imagination-to-real empowers robotics developers by bridging the gap between generative AI and classical physics simulators. Our library prepares realistic, diverse, and geometrically accurate visual data from generative models. This data enables robots to learn complex and highly dynamic tasks, such as parkour, without requiring depth sensors.
 
-`Image_Maker` contains our text-to-image generation code.
+🚀 What It Does:
+
+⚪ Integrates generative models with simulators to create rich, synthetic datasets.<br>
+⚪ Ensures temporal consistency with tools like Dreams In Motion (DIM).<br>
+⚪ Offers compatibility with MuJoCo environments for seamless data preparation.<br>
+
+🛠️ How to Use:
+
+⚪ Use Image_Maker for text-to-image generation tailored to your simulation needs.<br>
+⚪ Combine the generated data with your preferred training framework to develop robust robot learning models.<br>
+
+> *We are creating SmilingRobo Cloud, which will allow you to train your robot using our innovative libraries and drag-and-drop facilities.*  
 
 ---
 
 **Table of Contents**
 - [Image_Maker](#make-images-using-image_maker)
   - [Installation](#installation)
-    - [Setup conda environment](#1-setup-conda-environment)
     - [Install ComfyUI + Dependencies](#2-install-comfyui--dependencies)
     - [Setting up Models](#3-setting-up-models)
   - [Usage](#usage)
     - [Running the Example Workflow](#running-the-example-workflow)
     - [Adding Your Own Workflows](#adding-your-own-workflows)
     - [Scaling Image Generation](#scaling-image-generation)
-- [Train the Robot](#training-the-robot)
+- [Create Environment](#create-environment)
   -[Installing Dependencies](#1️-installing-gym_dmc)
   - [Usage](#usage)
     - [Basic LucidSim Pipeline](#rendering-conditioning-images)
     - [Full Rendering Pipeline (requires weaver)](#full-lucidsim-rendering-pipeline)
+
 - [Citation](#citation)
 
 
-## Make Images using image_maker
+# Installing imagination_to_real module
 
 #### 1. Setup Conda Environment
 
 ```bash
-conda create -n lucidsim python=3.10
-conda activate lucidsim
+conda create -n imagination_to_real python=3.10
+conda activate imagination_to_real
+git clone https://github.com/SmilingRobo/imagination-to-real imagination_to_real
+cd imagination_to_real
+pip install -e .
+
 ```
 
-#### 2. Install ComfyUI + Dependencies
+## Make Images using image_maker
+
+#### 1. Install ComfyUI + Dependencies
 
 For consistency, we recommend
 using [this version](https://github.com/comfyanonymous/ComfyUI/tree/ed2fa105ae29af6621232dd8ef622ff1e3346b3f) of
@@ -58,13 +78,9 @@ cd ComfyUI
 git checkout ed2fa105ae29af6621232dd8ef622ff1e3346b3f
 pip install -r requirements.txt
 
-# Installing imagination_to_real module
-git clone https://github.com/SmilingRobo/imagination-to-real imagination_to_real
-cd imagination_to_real
-pip install -e .
 ```
 
-#### 3. Setting up Models
+#### 2. Setting up Models
 
 We recommend placing your models outside the `ComfyUI` repo for better housekeeping. For this, you'll need to link your
 model paths through a config file. Check out the `configs` folder for a template, where you'll specify locations for
@@ -118,9 +134,9 @@ on many machines, that receive and fulfill rendering requests from the physics e
 conditioning images through a task queue (see [Zaku](https://zaku.readthedocs.io/en/latest/)). We hope to release setup
 instructions for this in the future, but we have included `Image_Maker/render_node.py` for your reference.
 
+---
 
-
-## Training the Robot
+## Create Environment
 
 <table style="border-collapse: collapse; border: none; width: 100%;">
   <tr>
@@ -133,7 +149,7 @@ instructions for this in the future, but we have included `Image_Maker/render_no
   </tr>
 </table>
 
-## 1.️ Installing gym_dmc
+#### 1.Installing gym_dmc
 
 The last few dependencies require a downgraded `setuptools` and `wheel` to install. To install, please downgrade and
 revert after.
@@ -145,7 +161,7 @@ pip install gym-dmc==0.2.9
 pip install -U setuptools wheel pip
 ```
 
-## Usage
+#### Usage
 
 **Note:** On Linux, make sure to set the environment variable ` MUJOCO_GL=egl`.
 
@@ -184,12 +200,10 @@ python imagination_to_real/lucidsim/scripts/play_three_mask_workflow.py --save-p
 where `save_path` and `env_name` are the same as before. `prompt_collection` should be a path to a `.jsonl` file with
 correctly formatted prompts, as in the `weaver/examples` folder.
 
-We thank the authors of [Extreme Parkour](https://github.com/chengxuxin/extreme-parkour) for their open-source codebase,
-which we used as a starting point for our expert policy (`lucidsim.model`).
 
+We thank the authors of [LucidSim](https://github.com/lucidsim/lucidsim) for their opensource code and [Extreme Parkour](https://github.com/chengxuxin/extreme-parkour) for their open-source codebase, which we used as a starting point for our library.
 
-<a href="https://www.buymeacoffee.com/SupportSmilingRobo" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
-
+---
 
 ## Citation
 
