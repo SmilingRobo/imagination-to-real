@@ -1,5 +1,5 @@
-#### imagination_to_real 
-## By SmilingRobo
+# **imagination_to_real**  
+## By SmilingRobo  
 
 <a href="https://www.buymeacoffee.com/SupportSmilingRobo" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
@@ -7,11 +7,11 @@
 
 ---
 
-### [🌐 SmilingRobo](https://www.smilingrobo.com) | [📝 Paper](https://arxiv.org/abs/2411.00083) | [Refrence](https://github.com/lucidsim)
+### [🌐 SmilingRobo](https://www.smilingrobo.com) | [📝 Paper](https://arxiv.org/abs/2411.00083)
 
 **imagination-to-real** Train your robot to do whatever you want using Generative AI
 
-Description
+#### Description 
 imagination-to-real empowers robotics developers by bridging the gap between generative AI and classical physics simulators. Our library prepares realistic, diverse, and geometrically accurate visual data from generative models. This data enables robots to learn complex and highly dynamic tasks, such as parkour, without requiring depth sensors.
 
 🚀 What It Does:
@@ -200,10 +200,11 @@ python imagination_to_real/lucidsim/scripts/play_three_mask_workflow.py --save-p
 where `save_path` and `env_name` are the same as before. `prompt_collection` should be a path to a `.jsonl` file with
 correctly formatted prompts, as in the `weaver/examples` folder.
 
+---
 
 We thank the authors of [LucidSim](https://github.com/lucidsim/lucidsim) for their opensource code and [Extreme Parkour](https://github.com/chengxuxin/extreme-parkour) for their open-source codebase, which we used as a starting point for our library.
 
----
+
 
 ## Citation
 
