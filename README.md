@@ -1,5 +1,4 @@
-# **imagination_to_real**  
-## By SmilingRobo  
+# **imagination_to_real** by SmilingRobo  
 
 <a href="https://www.buymeacoffee.com/SupportSmilingRobo" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
@@ -30,6 +29,7 @@ imagination-to-real empowers robotics developers by bridging the gap between gen
 ---
 
 **Table of Contents**
+- [Install imagination_to_real](#installing-imagination_to_real-module)
 - [Image_Maker](#make-images-using-image_maker)
   - [Installation](#installation)
     - [Install ComfyUI + Dependencies](#2-install-comfyui--dependencies)
@@ -39,10 +39,10 @@ imagination-to-real empowers robotics developers by bridging the gap between gen
     - [Adding Your Own Workflows](#adding-your-own-workflows)
     - [Scaling Image Generation](#scaling-image-generation)
 - [Create Environment](#create-environment)
-  -[Installing Dependencies](#1️-installing-gym_dmc)
+  - [Installing Dependencies](#1️-installing-gym_dmc)
   - [Usage](#usage)
     - [Basic LucidSim Pipeline](#rendering-conditioning-images)
-    - [Full Rendering Pipeline (requires weaver)](#full-lucidsim-rendering-pipeline)
+    - [Full Rendering Pipeline](#full-lucidsim-rendering-pipeline)
 
 - [Citation](#citation)
 
