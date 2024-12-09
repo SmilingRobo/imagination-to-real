@@ -198,7 +198,7 @@ python imagination_to_real/lucidsim/scripts/play_three_mask_workflow.py --save-p
 ```
 
 where `save_path` and `env_name` are the same as before. `prompt_collection` should be a path to a `.jsonl` file with
-correctly formatted prompts, as in the `weaver/examples` folder.
+correctly formatted prompts, as in the `imagination-to-real/tree/master/examples/image-maker/three_mask_workflow` folder.
 
 ---
 
