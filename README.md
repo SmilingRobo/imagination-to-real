@@ -107,18 +107,27 @@ imagination_to_real is organized by _workflows_. We include our main workflow ca
 given a depth map along with three semantic masks, each coming with a different prompt (for example,
 foreground/background/object).
 
-#### Running the Example Workflow
+#### Running the Workflow
 
-We provide example conditioning images and prompts for `three_mask_workflow` under the `examples` folder, grouped by
-scene. To try it out, use:
+```bash
+python imagination_to_real/image_maker/scripts/demo_three_mask_workflow.py [--path-to-folder] [--seed] [--save]
+```
+
+where `path-to-folder` corresponds to your data to generate images, and the `save` flag writes the output to the corresponding `examples/three_mask_workflow/[example-name]/samples` folder. The script will randomly select one of our provided prompts.
+
+To make your data, take this example as the reference `examples/image-maker/three_mask_workflow/ramps`
+
+##### Example
+
+We provide example conditioning images and prompts for `three_mask_workflow` under the `examples/image-maker/three_mask_workflow` folder, grouped by scene. 
+
+To try it out, use:
 
 ```bash
 python imagination_to_real/image_maker/scripts/demo_three_mask_workflow.py [--example-name] [--seed] [--save]
 ```
 
-where `example-name` corresponds to one of the scenes in the `examples/three_mask_workflow` folder, and the `save` flag
-writes the output to the corresponding `examples/three_mask_workflow/[example-name]/samples` folder. The script will
-randomly select one of our provided prompts.
+where `example-name` corresponds to one of the scenes in the `examples/image-maker/three_mask_workflow` folder.
 
 #### Adding Your Own Workflows
 
@@ -174,14 +183,26 @@ We have provided an expert policy checkpoint under `checkpoints/expert.pt`. This
 of [Extreme Parkour](https://github.com/chengxuxin/extreme-parkour). You can use this policy to sample an environment
 and visualize the conditioning images with:
 
+#### If you are using custom data
+
+> if you are follwing example just run the script
+
+1. Create a `name.py` file in `imagination_to_real/specs` take `gaps.py` as reference, change line `5`.
+
+2. create your `name`.py and `name`.xml file in `imagination_to_real/lucidsim/tasks`. Take the `gaps.py` and `gaps.xml` as reference and just change the line `11` of .py and `3` of .xml
+> if you are using your own robot then you have to change line `2` of xml too.
+
+3. Make you `name`.xml file and add it here `imagination_to_real/lucidsim/tasks/assets/terrains`. take the `gaps.xml` as reference
+
+
 ```bash
-# env-name: one of ['parkour', 'hurdle', 'gaps', 'stairs_v1', 'stairs_v2']
+# example env-name: one of ['parkour', 'hurdle', 'gaps', 'stairs_v1', 'stairs_v2']
 !python imagination_to_real/lucidsim/scripts/play.py --save-path [--env-name] [--num-steps] [--seed]
 ````
 
 where `save_path` is where to save the resulting video.
 
-#### Full LucidSim Rendering Pipeline
+#### Full Rendering Pipeline
 
 To run the full generative augmentation pipeline, please also make sure the environment variables are still
 set correctly:
@@ -190,6 +211,7 @@ set correctly:
 COMFYUI_CONFIG_PATH=/path/to/extra_model_paths.yaml
 PYTHONPATH=/path/to/ComfyUI:$PYTHONPATH
 ```
+
 
 You can then run the full pipeline with:
 
