@@ -6,7 +6,7 @@
 
 ---
 
-### [🌐 SmilingRobo](https://www.smilingrobo.com) | [📝 Paper](https://arxiv.org/abs/2411.00083)
+### [🌐 SmilingRobo](https://www.smilingrobo.com) | [📝 Paper](https://arxiv.org/abs/2411.00083) | [Open-Source Sprint](https://opensource.smilingrobo.com/projects/imagination-to-real/)
 
 **imagination-to-real** Train your robot to do whatever you want using Generative AI
 
