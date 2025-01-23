@@ -1,10 +1,4 @@
-# **imagination_to_real** by SmilingRobo  
-
-<a href="https://www.buymeacoffee.com/SupportSmilingRobo" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
-
-*We are feeling sleepy... Can you buy us a coffee?* 😴  
-
----
+# **imagination_to_real** by SmilingRobo 
 
 ### [🌐 SmilingRobo](https://www.smilingrobo.com) | [📝 Paper](https://arxiv.org/abs/2411.00083) | [Open-Source Sprint](https://opensource.smilingrobo.com/projects/imagination-to-real/)
 
