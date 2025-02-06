@@ -26,7 +26,7 @@ imagination-to-real empowers robotics developers by bridging the gap between gen
 - [Install imagination_to_real](#installing-imagination_to_real-module)
 - [Image_Maker](#make-images-using-image_maker)
   - [Installation](#installation)
-    - [Install ComfyUI + Dependencies](#install-comfyui--dependencies)
+    - [Install ComfyUI + Dependencies](#install-comfyui)
     - [Setting up Models](#setting-up-models)
   - [Usage](#usage)
     - [Running the Example Workflow](#running-the-example-workflow)
@@ -56,7 +56,7 @@ pip install -e .
 
 ## Make Images using image_maker
 
-#### 1. Install ComfyUI + Dependencies
+#### Install-ComfyUI
 
 For consistency, we recommend
 using [this version](https://github.com/comfyanonymous/ComfyUI/tree/ed2fa105ae29af6621232dd8ef622ff1e3346b3f) of
@@ -74,7 +74,7 @@ pip install -r requirements.txt
 
 ```
 
-#### 2. Setting up Models
+#### Setting-up-Models
 
 We recommend placing your models outside the `ComfyUI` repo for better housekeeping. For this, you'll need to link your
 model paths through a config file. Check out the `configs` folder for a template, where you'll specify locations for
